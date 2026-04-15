@@ -1,0 +1,497 @@
+/*
+ * faq.css
+ * 
+ * Gemeinsame Styles (Navigation, Footer, Buttons, etc.) 
+ * sind in /includes/common.css
+ * 
+ * Hier nur noch page-spezifische Styles
+ */
+
+/* 
+ * faq.css - Page-specific styles
+ * Common styles loaded from common.css
+ */
+
+/* Mitgliedschaft CSS - basierend auf Jugend-Seite Style */
+
+/* Navigation - Burger-Styles sind in common.css */
+
+.page-header {
+    margin-top: 100px;
+    padding: 5rem 2rem 3rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--deep-blue));
+    color: var(--white);
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+section {
+    padding: 6rem 2rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Membership Cards */
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.membership-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(43, 75, 140, 0.1);
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.membership-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(43, 75, 140, 0.2);
+}
+
+.membership-card.featured {
+    border: 2px solid var(--light-blue);
+}
+
+.popular-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-green);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.membership-header {
+    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    color: var(--white);
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+
+.membership-header h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price-amount {
+    font-size: 3.5rem;
+    font-family: 'Bebas Neue', cursive;
+    line-height: 1;
+}
+
+.price-period {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.membership-body {
+    padding: 2.5rem 2rem;
+}
+
+.membership-description {
+    text-align: center;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+.membership-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.membership-features li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.membership-features li:last-child {
+    border-bottom: none;
+}
+
+.membership-features li::before {
+    content: '✓';
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.membership-note {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 1.05rem;
+    margin-top: 2rem;
+}
+
+/* Benefits Section */
+.benefits-section {
+    background: var(--off-white);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(43, 75, 140, 0.08);
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.benefit-card p {
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: var(--white);
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+}
+
+.faq-item {
+    background: var(--off-white);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: var(--ice-blue);
+}
+
+.faq-arrow {
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 2rem;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    padding: 0 2rem 1.5rem;
+}
+
+.faq-answer p {
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+.faq-answer a {
+    color: var(--light-blue);
+    text-decoration: underline;
+}
+
+.faq-more {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.faq-more p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+/* Final CTA */
+.final-cta-section {
+    background: linear-gradient(135deg, var(--deep-blue), var(--primary-blue));
+    padding: 5rem 2rem;
+}
+
+.final-cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--white);
+}
+
+.final-cta-box h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.final-cta-box>p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+}
+
+.final-cta-note {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.final-cta-note a {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.btn-cta-large {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background: var(--white);
+    color: var(--primary-blue);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-cta-large:hover {
+    background: var(--off-white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .page-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .membership-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* FAQ Page Specific Styles */
+.faq-navigation-section {
+    padding: 3rem 2rem;
+    background: var(--off-white);
+}
+
+.faq-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 1rem 2rem;
+    background: var(--white);
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.faq-category-section {
+    padding: 4rem 2rem;
+}
+
+.faq-category-section.alt-bg {
+    background: var(--off-white);
+}
+
+.category-title {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.contact-cta-section {
+    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    padding: 5rem 2rem;
+}
+
+.contact-cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--white);
+}
+
+.contact-cta-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-cta-box p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    .page-header {
+        margin-top: 60px;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .faq-navigation-section {
+        padding: 2rem 1.25rem;
+    }
+
+    .faq-categories {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .category-btn {
+        text-align: center;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .faq-category-section {
+        padding: 3rem 1.25rem;
+    }
+
+    .category-title {
+        font-size: 2rem;
+    }
+
+    .contact-cta-section {
+        padding: 3rem 1.25rem;
+    }
+
+    .contact-cta-box h2 {
+        font-size: 2rem;
+    }
+
+    .contact-cta-box p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        margin-top: 60px;
+    }
+
+    .page-header p {
+        font-size: 0.9rem;
+    }
+
+    .faq-navigation-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .category-btn {
+        padding: 0.7rem 1.25rem;
+        font-size: 0.9rem;
+        display: block;
+    }
+
+    .faq-category-section {
+        padding: 2.5rem 1rem;
+    }
+
+    .category-title {
+        font-size: 1.7rem;
+    }
+
+    .contact-cta-section {
+        padding: 2.5rem 1rem;
+    }
+
+    .contact-cta-box h2 {
+        font-size: 1.7rem;
+    }
+
+    .contact-cta-box p {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,201 @@
+/* ================================================
+   Announcement Banner - DFC
+   kurze wichtige Mitteilungen (Trainingsausfall etc.)
+   orientiert an cookies.css
+   ================================================ */
+
+
+/* Overlay (Hintergrund-Verdunklung) */
+#announcementOverlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 9998;
+    backdrop-filter: blur(2px);
+}
+
+#announcementOverlay.cb-visible {
+    display: block;
+}
+
+
+/* Banner Container */
+#announcementBanner {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    pointer-events: none;
+}
+
+#announcementBanner.cb-visible {
+    display: flex;
+}
+
+
+/* Banner Box */
+.ab-box {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(43, 75, 140, 0.2);
+    max-width: 520px;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: all;
+    animation: abSlideIn 0.3s ease;
+}
+
+
+@keyframes abSlideIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* Header */
+.ab-header {
+
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.6rem 2rem 0;
+
+}
+
+
+.ab-header h3 {
+
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.7rem;
+    color: var(--primary-blue);
+    letter-spacing: 0.5px;
+
+}
+
+
+/* Text */
+.ab-text {
+
+    padding: 0.7rem 2rem 1.4rem;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+
+}
+
+
+/* Hervorhebung wichtig */
+.ab-text strong {
+
+    color: var(--text-dark);
+
+}
+
+
+/* Button Bereich */
+.ab-buttons {
+
+    display: flex;
+    gap: 0.7rem;
+    padding: 1.4rem 2rem;
+    background: var(--off-white);
+
+}
+
+
+/* Button */
+.ab-btn {
+
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+
+}
+
+
+.ab-btn-primary {
+
+    background: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue);
+
+}
+
+
+.ab-btn-primary:hover {
+
+    background: var(--deep-blue);
+    border-color: var(--deep-blue);
+    transform: translateY(-1px);
+
+}
+
+
+
+/* Variante für besonders wichtige Meldung */
+.ab-important .ab-box {
+
+    border-top: 5px solid #e74c3c;
+
+}
+
+
+
+/* Variante für Hinweis */
+.ab-info .ab-box {
+
+    border-top: 5px solid var(--light-blue);
+
+}
+
+
+
+/* Responsive */
+@media (max-width: 560px) {
+
+    .ab-box {
+
+        border-radius: 16px;
+        max-height: 90vh;
+        overflow-y: auto;
+
+    }
+
+    .ab-header {
+
+        padding: 1.3rem 1.5rem 0;
+
+    }
+
+    .ab-text {
+
+        padding: 0.6rem 1.5rem 1.2rem;
+
+    }
+
+    .ab-buttons {
+
+        padding: 1.2rem 1.5rem;
+
+    }
+
+}

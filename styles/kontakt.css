@@ -1,0 +1,351 @@
+/*
+ * kontakt.css
+ * 
+ * Gemeinsame Styles (Navigation, Footer, Buttons, etc.) 
+ * sind in /includes/common.css
+ * 
+ * Hier nur noch page-spezifische Styles
+ */
+
+/* 
+ * kontakt.css - Page-specific styles
+ * Common styles loaded from common.css
+ */
+
+.page-header {
+    margin-top: 100px;
+    padding: 5rem 2rem 3rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--deep-blue) 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+section {
+    padding: 6rem 2rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info {
+    background: var(--ice-blue);
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+.contact-info h3 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 2.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--light-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.contact-details h4 {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+}
+
+.contact-details p {
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+.contact-details a {
+    color: var(--light-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+.contact-form {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(43, 75, 140, 0.08);
+    border: 1px solid var(--border-light);
+}
+
+.contact-form h3 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+}
+
+.email {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: var(--off-white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--light-blue);
+    background: var(--white);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* DSGVO Checkbox */
+.form-group-checkbox {
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    cursor: pointer;
+    font-weight: normal !important;
+    color: var(--text-gray) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    margin-top: 2px;
+    accent-color: var(--light-blue);
+    cursor: pointer;
+}
+
+.checkbox-label a {
+    color: var(--light-blue);
+    text-decoration: underline;
+}
+
+.checkbox-label a:hover {
+    color: var(--primary-blue);
+}
+
+.form-submit {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--light-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-submit:hover {
+    background: var(--primary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(43, 75, 140, 0.3);
+}
+
+.map-section {
+    margin-top: 4rem;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(43, 75, 140, 0.08);
+}
+
+.map-section h3 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    padding: 2rem 2rem 1rem;
+}
+
+.map-container {
+    width: 100%;
+    height: 450px;
+    position: relative;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 2-Klick Consent Box */
+.map-consent {
+    width: 100%;
+    height: 100%;
+    background: var(--ice-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 20px 20px;
+}
+
+.map-consent-content {
+    text-align: center;
+    max-width: 420px;
+    padding: 2rem;
+}
+
+.map-consent-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.map-consent-content h4 {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+}
+
+.map-consent-content p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.map-consent-content a {
+    color: var(--light-blue);
+    text-decoration: underline;
+}
+
+.map-consent-btn {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.map-consent-btn:hover {
+    background: var(--light-blue);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .page-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+        font-size: 1.5rem;
+    }
+
+    .map-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .form-submit {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .page-header p {
+        font-size: 0.9rem;
+    }
+
+    .contact-icon {
+        font-size: 1.25rem;
+    }
+
+    .contact-details h4 {
+        font-size: 1rem;
+    }
+
+    .contact-details p,
+    .contact-details a {
+        font-size: 0.9rem;
+    }
+
+    .form-submit {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+
+    .map-container {
+        border-radius: 12px;
+    }
+}

@@ -1,0 +1,496 @@
+/*
+ * jugend.css
+ * 
+ * Gemeinsame Styles (Navigation, Footer, Buttons, etc.) 
+ * sind in /includes/common.css
+ * 
+ * Hier nur noch page-spezifische Styles
+ */
+
+.page-header {
+    margin-top: 100px;
+    padding: 15rem 2rem 3rem;
+    background:
+        linear-gradient(to top, rgba(43, 75, 140, 1) 5%, transparent 70%),
+        url('/ressources/Jugend_2025.jpg');
+    background-size: cover;
+    background-position: center 25%;
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.page-header h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* Hero Image Section */
+.hero-image-section {
+    padding: 4rem 2rem;
+    background: var(--off-white);
+}
+
+.hero-image-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(43, 75, 140, 0.12);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 500px;
+    object-position: center -100px;
+}
+
+section {
+    padding: 6rem 2rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ================================================
+   Intro / Trainingszeiten Section
+   ================================================ */
+.intro-section {
+    background: var(--white);
+}
+
+.intro-content {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* FIX: Beide Intro-Texte gleiche Schriftgröße via gemeinsame Klasse */
+.intro-lead,
+.intro-location {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+.intro-location {
+    margin-bottom: 3rem;
+}
+
+/* Trainingsplan */
+.training-schedule {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.schedule-day {
+    background: var(--off-white);
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.schedule-day-label {
+    background: var(--primary-blue);
+    color: var(--white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    padding: 0.8rem 1.5rem;
+    text-align: center;
+}
+
+.schedule-entries {
+    padding: 1rem 0;
+}
+
+.schedule-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.schedule-entry:last-child {
+    border-bottom: none;
+}
+
+.schedule-time {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+}
+
+.schedule-group {
+    font-size: 1rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.schedule-group em {
+    font-style: normal;
+    background: var(--light-blue);
+    color: var(--white);
+    padding: 0.15rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 0.4rem;
+}
+
+/* Intro CTA Text */
+.intro-cta-text {
+    border-top: 1px solid var(--border-light);
+    padding-top: 2rem;
+}
+
+.intro-cta-text p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+}
+
+.intro-contact a {
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.intro-contact a:hover {
+    text-decoration: underline;
+}
+
+.intro-stand {
+    font-size: 0.85rem !important;
+    color: var(--text-gray) !important;
+    margin-top: 0.5rem;
+}
+
+/* ================================================
+   Trainer Section
+   ================================================ */
+.trainers-section {
+    background: var(--off-white);
+}
+
+.trainers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.trainer-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(43, 75, 140, 0.08);
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+.trainer-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(43, 75, 140, 0.15);
+}
+
+.trainer-image-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--ice-blue, #e8f0fb), var(--off-white, #f7f9fc));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.trainer-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.trainer-img-fallback {
+    font-size: 5rem;
+    opacity: 0.4;
+    position: absolute;
+}
+
+/* hide fallback when image loads */
+.trainer-image-wrap:not(.no-image) .trainer-img-fallback {
+    display: none;
+}
+
+.trainer-image-wrap.no-image .trainer-img-fallback {
+    display: flex;
+}
+
+.trainer-info {
+    padding: 1.8rem;
+}
+
+.trainer-name {
+    font-size: 1.4rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+}
+
+.trainer-role-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.trainer-role {
+    display: inline-block;
+    background: var(--light-blue);
+    color: var(--white);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.vorstand-email {
+    display: inline-block;
+    color: var(--light-blue);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.vorstand-email:hover {
+    color: var(--primary-blue);
+}
+
+/* ================================================
+   NEU: Final CTA Section
+   ================================================ */
+.final-cta-section {
+    background: linear-gradient(135deg, var(--deep-blue), var(--primary-blue));
+    padding: 5rem 2rem;
+}
+
+.final-cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--white);
+}
+
+.final-cta-box h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.final-cta-box>p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+}
+
+.final-cta-note {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.final-cta-note a {
+    color: var(--white);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.btn-cta-large {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background: var(--white);
+    color: var(--primary-blue);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-cta-large:hover {
+    background: var(--off-white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ================================================
+   Responsive
+   ================================================ */
+@media (max-width: 1024px) {
+    .page-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .training-schedule {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        margin-top: 60px;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    /* FIX: Beide Intro-Texte gleich skalieren */
+    .intro-lead,
+    .intro-location {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        max-height: 350px;
+    }
+
+    /* FIX: Trainer-Grid 2 Spalten mit sinnvollem Minimum */
+    .trainers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        max-width: 100%;
+    }
+
+    .trainer-info {
+        padding: 1.2rem;
+    }
+
+    .trainer-name {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* FIX: Role-Row auf kleinen Cards untereinander statt nebeneinander */
+    .trainer-role-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
+
+    .trainer-role {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.75rem;
+    }
+
+    .vorstand-email {
+        font-size: 0.85rem;
+    }
+
+    .final-cta-box h2 {
+        font-size: 2rem;
+    }
+
+    .final-cta-box p {
+        font-size: 1rem;
+    }
+
+    .btn-cta-large {
+        font-size: 0.95rem;
+        padding: 0.85rem 1.75rem;
+        display: block;
+        text-align: center;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        margin-top: 60px;
+    }
+
+    .page-header p {
+        font-size: 0.9rem;
+    }
+
+    /* FIX: Beide Intro-Texte gleich skalieren */
+    .intro-lead,
+    .intro-location {
+        font-size: 0.95rem;
+    }
+
+    .trainers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .trainer-info {
+        padding: 1rem 0.75rem;
+    }
+
+    .trainer-name {
+        font-size: 0.95rem;
+        margin-bottom: 0.4rem;
+    }
+
+    /* FIX: Role-Badge bleibt lesbar, kein overflow */
+    .trainer-role {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .vorstand-email {
+        font-size: 0.8rem;
+    }
+
+    .final-cta-box {
+        padding: 2rem 1.25rem;
+        text-align: center;
+    }
+
+    .final-cta-box h2 {
+        font-size: 1.7rem;
+    }
+
+    .final-cta-box p {
+        font-size: 0.9rem;
+    }
+
+    .btn-cta-large {
+        font-size: 0.9rem;
+        padding: 0.75rem 1.5rem;
+        width: 100%;
+        max-width: none;
+    }
+}

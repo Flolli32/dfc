@@ -1,0 +1,626 @@
+/*
+ * verein.css
+ * 
+ * Gemeinsame Styles (Navigation, Footer, Buttons, etc.) 
+ * sind in /includes/common.css
+ * 
+ * Hier nur noch page-spezifische Styles
+ */
+
+/* 
+ * verein.css - Page-specific styles
+ * Common styles loaded from common.css
+ */
+
+.page-header {
+    margin-top: 100px;
+    padding: 15rem 2rem 3rem;
+    background:
+        linear-gradient(to top, rgba(43, 75, 140, 1) 5%, transparent 70%),
+        url('/ressources/DFC_all.jpeg');
+    background-size: cover;
+    background-position: center 15%;
+    color: var(--white);
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+}
+
+/* Hero Image Section */
+.hero-image-section {
+    padding: 4rem 2rem;
+    background: var(--off-white);
+}
+
+.hero-image-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(43, 75, 140, 0.12);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 500px;
+    object-position: center 0px;
+}
+
+.welcome-section {
+    position: relative;
+    z-index: 2;
+    padding: 6rem 2rem;
+    background: var(--off-white);
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.12);
+}
+
+.verein-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.verein-content h3 {
+    font-size: 4rem;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+}
+
+.verein-content p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--light-blue), var(--primary-blue));
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 5rem;
+    margin-bottom: 3rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0.6rem;
+    width: 20px;
+    height: 20px;
+    background: var(--white);
+    border: 4px solid var(--light-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(74, 127, 204, 0.1);
+    transform: translateX(-50%);
+}
+
+.timeline-year {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: var(--light-blue);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-text {
+    color: var(--text-gray);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Vorstand Section */
+.vorstand-section {
+    background: var(--white);
+    padding: 6rem 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 4rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    color: var(--text-gray);
+    font-size: 1.15rem;
+}
+
+.vorstand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vorstand-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(43, 75, 140, 0.1);
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.vorstand-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(43, 75, 140, 0.15);
+}
+
+.vorstand-avatar {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--light-blue), var(--sky-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2.5rem;
+    overflow: hidden;
+}
+
+.vorstand-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vorstand-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.vorstand-name {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.vorstand-description {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.vorstand-email {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--light-blue);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.vorstand-email:hover {
+    color: var(--primary-blue);
+}
+
+.vorstand-info-box {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--ice-blue);
+    border-radius: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vorstand-info-box p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.vorstand-info-box strong {
+    color: var(--primary-blue);
+}
+
+/* Ehrungen Section - Flexibles Timeline Design mit Grid */
+.ehrungen-section {
+    background: var(--off-white);
+    padding: 6rem 2rem;
+}
+
+.ehrungen-intro {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+
+.ehrungen-intro p {
+    font-size: 1.15rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+/* Timeline Container mit Grid */
+.ehrungen-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Wrapper für sichtbare Ehrungen mit Linie */
+.ehrungen-sichtbar {
+    position: relative;
+    z-index: 0;
+}
+
+/* Vertikale Linie - stoppt vor dem letzten margin-bottom (3rem) */
+.ehrungen-sichtbar::before {
+    content: '';
+    position: absolute;
+    left: 145px;
+    top: 0;
+    bottom: 3rem;
+    width: 3px;
+    background: linear-gradient(180deg, var(--light-blue), var(--primary-blue));
+    z-index: 1;
+}
+
+/* Ausgeklappte Ehrungen - separate Linie */
+.ehrungen-alt {
+    position: relative;
+    z-index: 0;
+}
+
+/* Jedes Timeline-Item als Grid */
+.ehrung-item {
+    display: grid;
+    grid-template-columns: 110px 70px 1fr;
+    gap: 0;
+    margin-bottom: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Jahr Badge - automatisch zentriert durch Grid */
+.ehrung-year {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(43, 75, 140, 0.3);
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 3;
+    position: relative;
+}
+
+/* Mittlerer Bereich mit Linie und Punkt */
+.ehrung-connector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 3;
+}
+
+/* Punkt auf der Linie */
+.ehrung-connector::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: var(--white);
+    border: 4px solid var(--light-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(74, 127, 204, 0.1);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+/* Horizontale Verbindungslinie */
+.ehrung-connector::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    background: var(--light-blue);
+    z-index: 3;
+}
+
+/* Content Card */
+.ehrung-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(43, 75, 140, 0.1);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--light-blue);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 3;
+    position: relative;
+}
+
+.ehrung-content:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 30px rgba(43, 75, 140, 0.15);
+}
+
+.ehrung-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ehrung-content p {
+    color: var(--text-gray);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.ehrung-content em {
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Toggle Button */
+.ehrungen-toggle {
+    text-align: center;
+    margin: 3rem 0 2rem;
+}
+
+.toggle-btn {
+    background: var(--white);
+    border: 2px solid var(--light-blue);
+    color: var(--primary-blue);
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.toggle-btn:hover {
+    background: var(--light-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 127, 204, 0.3);
+}
+
+.toggle-icon {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+/* Ältere Ehrungen (versteckt) */
+.ehrungen-alt {
+    margin-top: 2rem;
+}
+
+/* Kompakte Liste für sehr alte Ehrungen */
+.ehrung-compact-list {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(43, 75, 140, 0.1);
+    border: 1px solid var(--border-light);
+    margin: 2rem 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ehrung-compact-list h4 {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+}
+
+.ehrung-compact-list ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.ehrung-compact-list li {
+    padding: 1rem;
+    border-left: 3px solid var(--light-blue);
+    background: var(--ice-blue);
+    border-radius: 8px;
+    color: var(--text-gray);
+    line-height: 1.6;
+    transition: transform 0.2s ease;
+}
+
+.ehrung-compact-list li:hover {
+    transform: translateX(5px);
+    border-left-color: var(--primary-blue);
+}
+
+.ehrung-compact-list strong {
+    color: var(--primary-blue);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .verein-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .ehrung-item {
+        grid-template-columns: 90px 60px 1fr;
+    }
+
+    .ehrung-year {
+        font-size: 1.7rem;
+        padding: 1.2rem 0.8rem;
+    }
+
+    .ehrungen-timeline::before {
+        left: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: 10rem 1.5rem 2rem;
+        margin-top: 60px;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .vereinsbild-section {
+        height: 60vh;
+        position: relative;
+        top: 0;
+    }
+
+    .welcome-section {
+        border-radius: 20px 20px 0 0;
+        padding: 3.5rem 1.5rem 5rem;
+    }
+
+    .ehrungen-timeline::before {
+        display: none;
+    }
+
+    .ehrung-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .ehrung-connector {
+        display: none;
+    }
+
+    .ehrung-year {
+        font-size: 1.5rem;
+        padding: 1rem;
+        width: auto;
+    }
+
+    .ehrung-content {
+        padding: 1.5rem;
+    }
+
+    .ehrung-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .toggle-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .ehrung-compact-list ul {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        margin-top: 60px;
+    }
+
+    .page-header p {
+        font-size: 0.9rem;
+    }
+
+    .ehrung-year {
+        padding: 0.8rem 1.2rem;
+        display: inline-block;
+    }
+
+    .ehrung-content {
+        padding: 1.25rem;
+    }
+
+    .ehrung-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .toggle-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Vorstand-Cards zentriert */
+    .vorstand-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .vorstand-card {
+        text-align: center;
+    }
+}

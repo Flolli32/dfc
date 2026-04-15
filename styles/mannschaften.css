@@ -1,0 +1,645 @@
+/*
+ * mannschaften.css
+ */
+
+/* ===== TEAM CARD WRAPPER + VICTOR BADGE ===== */
+.team-card-wrapper {
+    position: relative;
+}
+
+.victor-card-badge {
+    position: absolute;
+    top: -2.2rem;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-blue);
+    border: none;
+    border-radius: 8px;
+    padding: 5px 12px;
+    box-shadow: 0 2px 8px rgba(43, 75, 140, 0.25);
+    z-index: 1;
+}
+
+.victor-card-badge-label {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: nowrap;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.victor-card-badge-logo {
+    height: 16px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1) !important;
+}
+
+.page-header {
+    margin-top: 100px;
+    padding: 5rem 2rem 3rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--deep-blue));
+    color: var(--white);
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+.teams-section {
+    padding: 6rem 2rem;
+}
+
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    overflow: visible;
+    padding-top: 2.5rem;
+}
+
+.team-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(43, 75, 140, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-light);
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(43, 75, 140, 0.2);
+}
+
+/* ===================================================
+   TEAM HEADER - Standard (nur Gradient)
+   =================================================== */
+.team-header {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(43, 75, 140, 0.85), rgba(74, 127, 204, 0.85));
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.team-header>* {
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+/* ===================================================
+   INDIVIDUELLE BILDER FÜR JEDE MANNSCHAFT
+   nth-child zählt .team-card-wrapper als Kind 1,
+   direkte .team-card Geschwister als Kind 2, 3, 4
+   =================================================== */
+
+/* 1. Mannschaft – sitzt innerhalb .team-card-wrapper */
+.team-card-wrapper .team-card .team-header {
+    background-image: url('/ressources/teams/1.Mannschaft.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.team-card-wrapper .team-card .team-header::before {
+    background: linear-gradient(135deg, rgba(43, 75, 140, 0.85), rgba(74, 127, 204, 0.85));
+}
+
+.team-card-wrapper .team-card:hover .team-header::before {
+    opacity: 0;
+}
+
+.team-card-wrapper .team-card:hover .team-header>* {
+    opacity: 0;
+}
+
+/* 2. Mannschaft – zweites Kind des Grids (direkte .team-card) */
+.teams-grid>.team-card:nth-child(2) .team-header {
+    background-image: url('/ressources/teams/2.Mannschaft.png');
+    background-position: center 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.teams-grid>.team-card:nth-child(2) .team-header::before {
+    background: linear-gradient(135deg, rgba(43, 75, 140, 0.65), rgba(74, 127, 204, 0.65));
+}
+
+.teams-grid>.team-card:nth-child(2):hover .team-header::before {
+    opacity: 0;
+}
+
+.teams-grid>.team-card:nth-child(2):hover .team-header>* {
+    opacity: 0;
+}
+
+/* 3. Mannschaft */
+.teams-grid>.team-card:nth-child(3) .team-header {
+    background-image: url('/ressources/teams/3.Mannschaft.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.teams-grid>.team-card:nth-child(3) .team-header::before {
+    background: linear-gradient(135deg, rgba(43, 75, 140, 0.85), rgba(74, 127, 204, 0.85));
+}
+
+.teams-grid>.team-card:nth-child(3):hover .team-header::before {
+    opacity: 0;
+}
+
+.teams-grid>.team-card:nth-child(3):hover .team-header>* {
+    opacity: 0;
+}
+
+/* Jugend U15 – kein Overlay nötig */
+.teams-grid>.team-card:nth-child(4) .team-header::before {
+    display: none;
+}
+
+.team-number {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    line-height: 1;
+    opacity: 0.4;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.team-name {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.team-league {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    font-weight: 500;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team-body {
+    padding: 2rem;
+}
+
+.team-body p {
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.team-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    background: var(--ice-blue);
+    border-radius: 8px;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.detail-value {
+    color: var(--text-gray);
+}
+
+.players-toggle {
+    width: 100%;
+    padding: 1rem;
+    background: var(--light-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.players-toggle:hover {
+    background: var(--primary-blue);
+}
+
+.players-toggle .arrow {
+    transition: transform 0.3s ease;
+}
+
+.players-toggle.active .arrow {
+    transform: rotate(180deg);
+}
+
+.players-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    margin-top: 1rem;
+}
+
+.players-list.active {
+    max-height: 1000px;
+}
+
+.player-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--off-white);
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+.player-item:hover {
+    transform: translateX(5px);
+    background: var(--ice-blue);
+}
+
+.player-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--light-blue), var(--sky-blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.player-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player-info {
+    flex: 1;
+}
+
+.player-name {
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 1.05rem;
+}
+
+.player-position {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+
+@media (max-width: 1024px) {
+    .page-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .teams-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2.4rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .team-header {
+        min-height: 160px;
+    }
+
+    .team-name {
+        font-size: 1.7rem;
+    }
+
+    .team-body {
+        padding: 1.5rem;
+    }
+
+    .players-toggle {
+        font-size: 0.9rem;
+        padding: 0.85rem;
+    }
+
+    .liga-link {
+        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .terminplan-section {
+        padding: 3rem 1.25rem;
+    }
+
+    .terminplan-section .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .kalender-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+
+    .kalender-item {
+        padding: 1rem 0.5rem;
+    }
+
+    .k-datum {
+        font-size: 0.85rem;
+    }
+
+    .victor-card-badge {
+        padding: 4px 9px;
+    }
+
+    .victor-card-badge-label {
+        font-size: 0.65rem;
+    }
+
+    .victor-card-badge-logo {
+        height: 14px;
+        filter: brightness(0) invert(1) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .team-header {
+        min-height: 140px;
+    }
+
+    .team-name {
+        font-size: 1.5rem;
+    }
+
+    .team-body {
+        padding: 1.25rem;
+    }
+
+    .detail-row {
+        font-size: 0.9rem;
+        padding: 0.65rem;
+    }
+
+    .players-toggle {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+    }
+
+    .player-name {
+        font-size: 0.95rem;
+    }
+
+    .player-avatar {
+        width: 42px;
+        height: 42px;
+    }
+
+    .liga-link {
+        font-size: 0.82rem;
+        padding: 0.55rem 1rem;
+    }
+
+    .terminplan-section {
+        padding: 2.5rem 1rem;
+    }
+
+    .terminplan-tab {
+        font-size: 0.82rem;
+        padding: 0.45rem 1rem;
+    }
+
+    .kalender-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+}
+
+
+.liga-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    padding: 0.65rem 1.4rem;
+    background: linear-gradient(135deg, var(--primary-blue, #1a3a6b) 0%, var(--deep-blue, #0d2044) 100%);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.liga-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #2451a0 0%, #1a3a6b 100%);
+}
+
+/* ===== TERMINPLAN ===== */
+.terminplan-section {
+    background: var(--off-white);
+    padding: 5rem 2rem;
+}
+
+.terminplan-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.terminplan-section .section-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.terminplan-section .section-header p {
+    color: var(--text-gray);
+    font-size: 1rem;
+}
+
+.terminplan-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.terminplan-tab {
+    padding: 0.6rem 1.6rem;
+    border: 2px solid var(--primary-blue);
+    background: transparent;
+    color: var(--primary-blue);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.terminplan-tab:hover,
+.terminplan-tab.active {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.terminplan-panel {
+    display: none;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.terminplan-panel.active {
+    display: block;
+}
+
+.terminplan-liga-badge {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.terminplan-liga-badge span {
+    display: inline-block;
+    background: var(--ice-blue);
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+}
+
+.kalender-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.kalender-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 1.25rem 0.75rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.15s;
+}
+
+.kalender-item.vergangen {
+    background: white;
+    border: 2px solid var(--border-light);
+    opacity: 0.6;
+}
+
+.kalender-item.naechstes {
+    background: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    color: white;
+    box-shadow: 0 4px 16px rgba(43, 75, 140, 0.25);
+    transform: scale(1.03);
+}
+
+.k-datum {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.kalender-item.naechstes .k-datum {
+    color: white;
+}
+
+.k-next {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .page-header h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .page-header {
+        margin-top: 60px;
+    }
+
+    .kalender-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .kalender-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .page-header {
+        margin-top: 60px;
+    }
+}

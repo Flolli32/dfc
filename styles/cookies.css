@@ -1,0 +1,263 @@
+/* ================================================
+   Cookie Banner - DFC
+   ================================================ */
+
+/* Overlay (Hintergrund-Verdunklung) */
+#cookieOverlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 9998;
+    backdrop-filter: blur(2px);
+}
+
+#cookieOverlay.cb-visible {
+    display: block;
+}
+
+/* Banner Container */
+#cookieBanner {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    pointer-events: none;
+}
+
+#cookieBanner.cb-visible {
+    display: flex;
+}
+
+/* Banner Box */
+.cb-box {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(43, 75, 140, 0.2);
+    max-width: 560px;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: all;
+    animation: cbSlideIn 0.3s ease;
+}
+
+@keyframes cbSlideIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+/* Header */
+.cb-header {
+    display: flex;
+    align-items: center;
+    padding: 1.8rem 2rem 0;
+}
+
+.cb-header h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    letter-spacing: 0.5px;
+}
+
+/* Einleitungstext */
+.cb-text {
+    padding: 0.8rem 2rem 1.2rem;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.cb-text a {
+    color: var(--light-blue);
+    text-decoration: underline;
+}
+
+/* Kategorien */
+.cb-categories {
+    border-top: 1px solid var(--border-light);
+    padding: 0.5rem 0;
+}
+
+.cb-category {
+    padding: 0.9rem 2rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.cb-category:last-child {
+    border-bottom: none;
+}
+
+.cb-category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.cb-category-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.cb-category-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.cb-category-desc {
+    font-size: 0.82rem;
+    color: var(--text-gray);
+    line-height: 1.4;
+}
+
+/* "Immer aktiv" Badge */
+.cb-toggle-disabled span {
+    font-size: 0.8rem;
+    color: #27ae60;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Toggle Switch */
+.cb-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.cb-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.cb-slider {
+    position: absolute;
+    inset: 0;
+    background: var(--border-light);
+    border-radius: 26px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cb-slider::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    top: 3px;
+    background: var(--white);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.cb-switch input:checked + .cb-slider {
+    background: var(--light-blue);
+}
+
+.cb-switch input:checked + .cb-slider::before {
+    transform: translateX(22px);
+}
+
+/* Buttons */
+.cb-buttons {
+    display: flex;
+    gap: 0.7rem;
+    padding: 1.5rem 2rem;
+    background: var(--off-white);
+    flex-wrap: wrap;
+}
+
+.cb-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    white-space: nowrap;
+}
+
+.cb-btn-primary {
+    background: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue);
+}
+
+.cb-btn-primary:hover {
+    background: var(--deep-blue);
+    border-color: var(--deep-blue);
+    transform: translateY(-1px);
+}
+
+.cb-btn-secondary {
+    background: var(--white);
+    color: var(--primary-blue);
+    border-color: var(--border-light);
+}
+
+.cb-btn-secondary:hover {
+    border-color: var(--light-blue);
+    color: var(--light-blue);
+}
+
+/* Footer-Link */
+.cookie-settings-link {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    padding: 0;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.cookie-settings-link:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 560px) {
+    .cb-box {
+        border-radius: 16px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .cb-header {
+        padding: 1.4rem 1.5rem 0;
+    }
+
+    .cb-text {
+        padding: 0.8rem 1.5rem 1rem;
+    }
+
+    .cb-category {
+        padding: 0.9rem 1.5rem;
+    }
+
+    .cb-buttons {
+        padding: 1.2rem 1.5rem;
+        flex-direction: column;
+    }
+
+    .cb-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seite nicht gefunden – Delmenhorster Federball-Club</title>
+    <link rel="icon" type="image/png" href="/ressources/Logo.png">
+    <link rel="stylesheet" href="/includes/common.css">
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        .error-page {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--primary-blue) 100%);
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        .error-inner { max-width: 520px; }
+        .error-code {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 8rem;
+            line-height: 1;
+            color: rgba(255,255,255,0.15);
+            margin-bottom: -1rem;
+        }
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        .error-inner h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .error-inner p {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+        .error-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .error-btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .error-btn-primary {
+            background: white;
+            color: var(--primary-blue);
+        }
+        .error-btn-primary:hover { background: var(--ice-blue); }
+        .error-btn-secondary {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+        .error-btn-secondary:hover { background: rgba(255,255,255,0.25); }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="error-page">
+        <div class="error-inner">
+            <div class="error-code">404</div>
+            <div class="error-icon">🏸</div>
+            <h1>Seite nicht gefunden</h1>
+            <p>
+                Die gesuchte Seite existiert leider nicht oder wurde verschoben.
+                Vielleicht hilft dir einer der folgenden Links weiter.
+            </p>
+            <div class="error-links">
+                <a href="/" class="error-btn error-btn-primary">Zur Startseite</a>
+                <a href="/kontakt.html" class="error-btn error-btn-secondary">Kontakt</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="/scripts/cookies.js"></script>
+    <script src="/includes/includes.js"></script>
+</body>
+</html>

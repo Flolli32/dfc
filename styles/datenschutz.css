@@ -1,0 +1,168 @@
+/*
+ * datenschutz.css
+ * Page-spezifische Styles für die Datenschutzerklärung
+ * Gemeinsame Styles sind in /includes/common.css
+ */
+
+/* Page Header */
+.page-header {
+    margin-top: 100px;
+    padding: 5rem 2rem 3rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--deep-blue) 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* Content Section */
+section.datenschutz-section {
+    padding: 4rem 2rem 6rem;
+    background: var(--off-white);
+}
+
+/* Inhaltsverzeichnis */
+.toc-card {
+    background: var(--ice-blue);
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-light);
+}
+
+.toc-card h2 {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.toc-list {
+    list-style: none;
+    columns: 2;
+    gap: 1rem;
+}
+
+.toc-list li {
+    padding: 0.3rem 0;
+}
+
+.toc-list a {
+    color: var(--light-blue);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.toc-list a:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+/* Datenschutz Cards */
+.datenschutz-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(43, 75, 140, 0.08);
+    border: 1px solid var(--border-light);
+    scroll-margin-top: 120px;
+}
+
+.datenschutz-card h2 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--ice-blue);
+}
+
+.datenschutz-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-blue);
+    margin: 1.5rem 0 0.8rem;
+}
+
+.datenschutz-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.datenschutz-card p:last-child {
+    margin-bottom: 0;
+}
+
+.datenschutz-card ul {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.datenschutz-card ul li {
+    margin-bottom: 0.3rem;
+}
+
+.datenschutz-card a {
+    color: var(--light-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.datenschutz-card a:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+/* Highlight Box */
+.highlight-box {
+    background: var(--ice-blue);
+    border-left: 4px solid var(--primary-blue);
+    border-radius: 0 12px 12px 0;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+}
+
+.highlight-box p {
+    margin-bottom: 0 !important;
+    font-weight: 500;
+    color: var(--primary-blue) !important;
+}
+
+/* Stand-Hinweis */
+.source-note {
+    text-align: center;
+    margin-top: 2.5rem;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .page-header h1 { font-size: 3.5rem; }
+}
+
+@media (max-width: 768px) {
+    .page-header h1 { font-size: 2.4rem; }
+    .datenschutz-card { padding: 2rem 1.5rem; }
+    .toc-list { columns: 1; }
+}
+
+@media (max-width: 480px) {
+    .page-header h1 { font-size: 2rem; }
+    .page-header p { font-size: 0.9rem; }
+    .datenschutz-card { padding: 1.5rem 1rem; }
+    .datenschutz-card h2 { font-size: 1.4rem; }
+    .datenschutz-card h3 { font-size: 1.1rem; }
+    .datenschutz-card p, .datenschutz-card li { font-size: 0.9rem; }
+}
