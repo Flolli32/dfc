@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/ressources/Logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - Delmenhorster Federball-Club</title>
+    
+    <link rel="stylesheet" href="/includes/common.css">
+    <link rel="stylesheet" href="/styles/cookies.css">
+    <link rel="stylesheet" href="/styles/galerie.css">
+    <link rel="stylesheet" href="/styles/galerie-auth.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <!-- Gleicher Header wie vorher -->
+    <div class="page-header">
+        <h1>Galerie</h1>
+        <p>60 Jahre Vereinsgeschichte in Bildern</p>
+    </div>
+
+    <!-- Auth-Leiste -->
+    <div class="gallery-auth-bar">
+        <div class="container">
+            <span id="privateBadge" class="member-badge" style="display:none;">🔒 Mitglieder-Ansicht aktiv</span>
+            <button id="galleryLoginBtn" class="auth-btn auth-btn-login">🔒 Mitglieder-Bereich</button>
+            <button id="galleryLogoutBtn" class="auth-btn auth-btn-logout" style="display:none;">Abmelden</button>
+        </div>
+    </div>
+
+    <section class="galerie-section">
+        <div class="container">
+
+            <!-- Dekaden-Filter -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all" data-type="decade">Alle</button>
+                <button class="filter-btn" data-filter="2020" data-type="decade">2020-2024</button>
+                <button class="filter-btn" data-filter="2010" data-type="decade">2010-2019</button>
+                <button class="filter-btn" data-filter="2000" data-type="decade">2000-2009</button>
+                <button class="filter-btn" data-filter="pre2000" data-type="decade">Vor 2000</button>
+            </div>
+
+            <!-- Jahr-Filter (scrollbare Leiste) -->
+            <div class="year-filter-container">
+                <span class="year-label">Jahr:</span>
+                <div class="year-scroll-container">
+                    <button class="year-btn active" data-year="all">Alle</button>
+                    <!-- Wird dynamisch gefüllt -->
+                </div>
+            </div>
+
+            <!-- Optional: Kategorie-Filter (kannst du auch weglassen) -->
+            <div class="category-filter" id="categoryFilter" style="display: none;">
+                <button class="category-btn active" data-category="all">Alle Kategorien</button>
+                <button class="category-btn" data-category="erfolge">🏆 Erfolge</button>
+                <button class="category-btn" data-category="teams">⚽ Mannschaften</button>
+                <button class="category-btn" data-category="events">🎉 Events</button>
+                <button class="category-btn" data-category="vereinsleben">🏛️ Vereinsleben</button>
+            </div>
+
+            <!-- Galerie Grid - wird automatisch gefüllt -->
+            <div class="galerie-grid" id="galerieGrid">
+                <!-- Skeleton Loader -->
+                <div class="skeleton-grid" id="loading">
+                    <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-label"></div></div>
+                    <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-label"></div></div>
+                    <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-label"></div></div>
+                    <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-label"></div></div>
+                    <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-label"></div></div>
+                    <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-label"></div></div>
+                </div>
+            </div>
+
+            <!-- Keine Alben gefunden -->
+            <div class="no-images" id="noImages" style="display: none;">
+                <p>Keine Alben für diesen Zeitraum verfügbar.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Album-Ansicht -->
+    <section class="album-view-section" id="albumView" style="display: none;">
+        <div class="container">
+            <button class="back-btn" onclick="closeAlbum()">← Zurück zur Übersicht</button>
+
+            <div class="album-header">
+                <h2 id="albumTitle">Album Titel</h2>
+                <p id="albumCount" class="photo-count">0 Fotos</p>
+            </div>
+
+            <div class="album-photos-grid" id="albumPhotosGrid">
+                <!-- Bilder werden dynamisch eingefügt -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-prev" onclick="changeLightboxImage(-1)">❮</button>
+        <button class="lightbox-next" onclick="changeLightboxImage(1)">❯</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+            <div class="lightbox-caption">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-modal-box">
+            <button class="login-modal-close" id="loginModalClose">&times;</button>
+            <div class="login-modal-icon">🔒</div>
+            <h2>Mitglieder-Bereich</h2>
+            <p>Dieser Bereich ist nur für Vereinsmitglieder zugänglich. Bitte gib das Mitglieder-Passwort ein.</p>
+            <form id="loginForm" autocomplete="off">
+                <div class="login-field">
+                    <label for="loginPassword">Passwort</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Vereinspasswort" autocomplete="current-password" required>
+                </div>
+                <div class="login-error" id="loginError" style="display:none;"></div>
+                <button type="submit" class="login-submit-btn">Anmelden</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="/scripts/galerie_auto.js"></script>
+    <script src="/scripts/cookies.js"></script>
+    <script src="/includes/includes.js"></script>
+</body>
+
+</html>

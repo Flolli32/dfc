@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Die Mannschaften des Delmenhorster FC – Trainingszeiten, aktive Spieler und Spielbetrieb. Alles rund um den sportlichen Wettkampf.">
+    <link rel="icon" type="image/jpg" href="/ressources/Logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsere Mannschaften - Delmenhorster Federball-Club</title>
+
+    <link rel="stylesheet" href="/includes/common.css">
+    <link rel="stylesheet" href="/styles/cookies.css">
+    <link rel="stylesheet" href="/styles/mannschaften.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="page-header">
+        <h1>Unsere Mannschaften</h1>
+        <p>Aktive Teams in der Saison 2025/26</p>
+    </div>
+
+    <section class="teams-section">
+        <div class="container">
+            <div class="teams-grid">
+                <div class="team-card-wrapper">
+                    <div class="victor-card-badge">
+                        <span class="victor-card-badge-label">Ausgerüstet von</span>
+                        <img src="/ressources/logos/VICTOR-Logo_monochrome_black.png" alt="VICTOR"
+                            class="victor-card-badge-logo">
+                    </div>
+                    <div class="team-card">
+                        <div class="team-header">
+                            <h3 class="team-name">1. Mannschaft</h3>
+                            <p class="team-league">Verbandsklasse</p>
+                        </div>
+                        <div class="team-body">
+                            <div class="team-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Training:</span>
+                                    <span class="detail-value">Mo/Di/Do</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Kapitän:</span>
+                                    <span class="detail-value">Frank Eilers</span>
+                                </div>
+                            </div>
+
+                            <button class="players-toggle" onclick="togglePlayers(this)">
+                                <span>Spieler anzeigen</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="players-list">
+                                <div class="player-item">
+                                    <div class="player-avatar"><img src="/ressources/players/FrankEilers.jpg"
+                                            alt="Frank Eilers"></div>
+                                    <div class="player-info">
+                                        <div class="player-name">Frank Eilers</div>
+                                    </div>
+                                </div>
+                                <div class="player-item">
+                                    <div class="player-avatar"><img src="/ressources/players/TorbenWachholz.jpg"
+                                            alt="Torben Wachholz"></div>
+                                    <div class="player-info">
+                                        <div class="player-name">Torben Wachholz</div>
+                                    </div>
+                                </div>
+                                <div class="player-item">
+                                    <div class="player-avatar"><img src="/ressources/players/MattiHildebrandt.jpg"
+                                            alt="Matti Hildebrandt"></div>
+                                    <div class="player-info">
+                                        <div class="player-name">Matti Hildebrandt</div>
+                                    </div>
+                                </div>
+                                <div class="player-item">
+                                    <div class="player-avatar">👤</div>
+                                    <div class="player-info">
+                                        <div class="player-name">Julius Dreßen</div>
+                                    </div>
+                                </div>
+                                <div class="player-item">
+                                    <div class="player-avatar"><img src="/ressources/players/SimonWepner.jpg"
+                                            alt="Simon Wepner"></div>
+                                    <div class="player-info">
+                                        <div class="player-name">Simon Wepner</div>
+                                    </div>
+                                </div>
+                                <div class="player-item">
+                                    <div class="player-avatar"><img src="/ressources/players/StefanLipinski.jpg"
+                                            alt="Stefan Lipinski"></div>
+                                    <div class="player-info">
+                                        <div class="player-name">Stefan Lipinski</div>
+                                    </div>
+                                </div>
+                                <div class="player-item">
+                                    <div class="player-avatar"><img src="/ressources/players/AdrianaCaprino.jpg"
+                                            alt="Adriana Caprino"></div>
+                                    <div class="player-info">
+                                        <div class="player-name">Adriana Caprino</div>
+                                    </div>
+                                </div>
+                                <div class="player-item">
+                                    <div class="player-avatar">👤</div>
+                                    <div class="player-info">
+                                        <div class="player-name">Emily Männel</div>
+                                    </div>
+                                </div>
+                                <div class="player-item">
+                                    <div class="player-avatar"><img src="/ressources/players/AnjaEilers.jpg"
+                                            alt="Anja Eilers"></div>
+                                    <div class="player-info">
+                                        <div class="player-name">Anja Eilers</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="https://nbv-badminton.liga.nu/cgi-bin/WebObjects/nuLigaBADDE.woa/wa/groupPage?championship=Bezirk+Weser-Ems+25%2F26&group=37015"
+                                target="_blank" class="liga-link">Tabelle &amp; Spielplan →</a>
+                        </div>
+                    </div>
+                </div><!-- /team-card-wrapper -->
+
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3 class="team-name">2. Mannschaft</h3>
+                        <p class="team-league">Bezirksklasse</p>
+                    </div>
+                    <div class="team-body">
+                        <div class="team-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Training:</span>
+                                <span class="detail-value">Mo/Do</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Kapitän:</span>
+                                <span class="detail-value">Olaf Voigt</span>
+                            </div>
+                        </div>
+
+                        <button class="players-toggle" onclick="togglePlayers(this)">
+                            <span>Spieler anzeigen</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="players-list">
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/EikeDunker.jpg"
+                                        alt="Eike-Sven Dunker"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Eike-Sven Dunker</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar">
+                                    <img src="/ressources/players/MarcoWalter.jpg" alt="Marco Walter">
+                                </div>
+                                <div class="player-info">
+                                    <div class="player-name">Marco Walter</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/UdoSpähn.jpg" alt="Udo Spähn">
+                                </div>
+                                <div class="player-info">
+                                    <div class="player-name">Udo Spähn</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/BennetWolpmann.jpg"
+                                        alt="Bennet Wolpmann"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Bennet Wolpmann</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/ArminWiedner.jpg"
+                                        alt="Armin Wiedner"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Armin Wiedner</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar">👤</div>
+                                <div class="player-info">
+                                    <div class="player-name">Olaf Voigt</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/CorinnaSchnitger.jpg"
+                                        alt="Corinna Schnitger"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Corinna Schnitger</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/HenrikeWübbenhorst.jpg"
+                                        alt="Henrike Wübbenhorst"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Henrike Wübbenhorst</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://nbv-badminton.liga.nu/cgi-bin/WebObjects/nuLigaBADDE.woa/wa/groupPage?championship=Bezirk+Weser-Ems+25%2F26&group=37075"
+                            target="_blank" class="liga-link">Tabelle &amp; Spielplan →</a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3 class="team-name">3. Mannschaft</h3>
+                        <p class="team-league">Kreisliga</p>
+                    </div>
+                    <div class="team-body">
+                        <div class="team-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Training:</span>
+                                <span class="detail-value">Mo/Do</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Kapitän:</span>
+                                <span class="detail-value">Tim Steinkamp</span>
+                            </div>
+                        </div>
+
+                        <button class="players-toggle" onclick="togglePlayers(this)">
+                            <span>Spieler anzeigen</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="players-list">
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/ArturWischegorzev.jpg"
+                                        alt="Artur Wischegorzev"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Artur Wischegorzev</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/FlorianLindemann.jpg"
+                                        alt="Florian Lindemann"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Florian Lindemann</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/MarvinMeyer.jpg"
+                                        alt="Marvin Meyer"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Marvin Meyer</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/TimSteinkamp.jpg"
+                                        alt="Tim Steinkamp"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Tim Steinkamp</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/TjarkPollak.jpg"
+                                        alt="Tjark Pollak"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Tjark Pollak</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/RosaEickhorst.jpg"
+                                        alt="Rosa Eickhorst"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Rosa Eickhorst</div>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-avatar"><img src="/ressources/players/EileenEbbers.jpg"
+                                        alt="Eileen Ebbers"></div>
+                                <div class="player-info">
+                                    <div class="player-name">Eileen Ebbers</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://nbv-badminton.liga.nu/cgi-bin/WebObjects/nuLigaBADDE.woa/wa/groupPage?championship=Kreis+Ammerland+25%2F26&group=37115"
+                            target="_blank" class="liga-link">Tabelle &amp; Spielplan →</a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-header">
+                        <div class="team-number">U15</div>
+                        <h3 class="team-name">Jugend U15</h3>
+                    </div>
+                    <div class="team-body">
+                        <div class="team-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Training:</span>
+                                <span class="detail-value">Mo/Do</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Trainer:</span>
+                                <span class="detail-value">Marco Walter</span>
+                            </div>
+                        </div>
+                        <a href="https://nbv-badminton.liga.nu/cgi-bin/WebObjects/nuLigaBADDE.woa/wa/groupPage?championship=Bezirk+Weser-Ems+25%2F26&group=38257"
+                            target="_blank" class="liga-link">Tabelle &amp; Spielplan →</a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-header">
+                        <div class="team-number">U17</div>
+                        <h3 class="team-name">Jugend U17</h3>
+                    </div>
+                    <div class="team-body">
+                        <div class="team-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Training:</span>
+                                <span class="detail-value">Mo/Do</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Trainer:</span>
+                                <span class="detail-value">Marco Walter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TERMINPLAN ===== -->
+    <section class="terminplan-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Spielplan 2025/26</h2>
+                <p>September 2025 – März 2026</p>
+            </div>
+
+            <div class="terminplan-tabs">
+                <button class="terminplan-tab active" onclick="showTerminplan('t1', this)">1. Mannschaft</button>
+                <button class="terminplan-tab" onclick="showTerminplan('t2', this)">2. Mannschaft</button>
+                <button class="terminplan-tab" onclick="showTerminplan('t3', this)">3. Mannschaft</button>
+            </div>
+
+            <!-- 1. Mannschaft -->
+            <div class="terminplan-panel active" id="t1">
+                <div class="terminplan-liga-badge"><span>Verbandsklasse Weser-Ems</span></div>
+                <div class="kalender-grid">
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 28.09.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 09.11.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 23.11.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 14.12.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 25.01.2026</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 08.02.2026</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 01.03.2026</span></div>
+                </div>
+            </div>
+
+            <!-- 2. Mannschaft -->
+            <div class="terminplan-panel" id="t2">
+                <div class="terminplan-liga-badge"><span>Bezirksklasse Weser-Ems 2 (Mitte)</span></div>
+                <div class="kalender-grid">
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 28.09.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 23.11.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 14.12.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 25.01.2026</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 08.02.2026</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 01.03.2026</span></div>
+                </div>
+            </div>
+
+            <!-- 3. Mannschaft -->
+            <div class="terminplan-panel" id="t3">
+                <div class="terminplan-liga-badge"><span>Kreisliga WE-Reg. 1/5/6</span></div>
+                <div class="kalender-grid">
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 14.09.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 28.09.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 09.11.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 23.11.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 14.12.2025</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 25.01.2026</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 08.02.2026</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 01.03.2026</span></div>
+                    <div class="kalender-item vergangen"><span class="k-datum">So. 15.03.2026</span>
+                        <!--  <span class="next">Nächster Spieltag</span> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="/scripts/mannschaften.js"></script>
+    <script src="/scripts/cookies.js"></script>
+    <script src="/includes/includes.js"></script>
+</body>
+
+</html>

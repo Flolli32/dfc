@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# PHP-Dateien und interne Verzeichnisse ausschließen
+Disallow: /php/
+Disallow: /includes/
+
+Sitemap: https://dfc-online.de/sitemap.xml

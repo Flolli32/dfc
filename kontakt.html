@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Kontakt zum Delmenhorster Federball-Club. Probetraining anmelden oder Fragen stellen – wir freuen uns auf deine Nachricht.">
+    <link rel="icon" type="image/png" href="/ressources/Logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Delmenhorster Federball-Club</title>
+
+    <link rel="stylesheet" href="/includes/common.css">
+    <link rel="stylesheet" href="/styles/cookies.css">
+    <link rel="stylesheet" href="/styles/kontakt.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="page-header">
+        <h1>Kontakt & Anfahrt</h1>
+        <p>Wir freuen uns auf deine Nachricht – komm vorbei zum Probetraining!</p>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Kontaktinformationen</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Sporthalle</h4>
+                            <p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Sporthalle+Willmsgymnasium+Friedrich-Ebert-Allee+27749+Delmenhorst"
+                                    target="_blank">
+                                    Sporthalle Willmsgymnasium<br>
+                                    Friedrich-Ebert-Allee<br>
+                                    27749 Delmenhorst
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>E-Mail</h4>
+                            <p>
+                                <a href="mailto:vorsitzender@dfc-online.de" class="email">vorsitzender@dfc-online.de</a>
+                                <a href="mailto:jugendwart@dfc-online.de" class="email">jugendwart@dfc-online.de</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Telefon</h4>
+                            <p><a href="tel:+491795972934">+49 179 5972934</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h4>Trainingszeiten</h4>
+                            <p>Montag & Donnerstag: 17:30 - 21:30 Uhr<br>
+                                Dienstag (Mannschaftstraining): 20:00 - 22:00 Uhr</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Nachricht senden</h3>
+                    <form action="/php/send-mail.php" method="POST">
+                        <!-- Honeypot: für Menschen unsichtbar, Bots füllen es aus -->
+                        <div style="display:none;" aria-hidden="true">
+                            <input type="text" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Nachricht *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="form-group form-group-checkbox">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="datenschutz" required>
+                                <span>Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>
+                                    gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage
+                                    einverstanden. *</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-thirdary">Nachricht senden</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-section">
+                <h3>📍 So findest du uns</h3>
+                <div class="map-container">
+                    <!-- 2-Klick-Lösung: Karte wird erst nach Zustimmung geladen -->
+                    <div class="map-consent" id="mapConsent">
+                        <div class="map-consent-content">
+                            <div class="map-consent-icon">🗺️</div>
+                            <h4>Google Maps</h4>
+                            <p>Durch das Laden der Karte werden Daten (z.&nbsp;B. Ihre IP-Adresse) an Google übertragen.
+                                Weitere Informationen findest du in unserer <a
+                                    href="datenschutz.html">Datenschutzerklärung</a>.</p>
+                            <button class="map-consent-btn" onclick="DFC_Cookies.openSettings()">Karte laden</button>
+                        </div>
+                    </div>
+                    <iframe id="mapIframe"
+                        data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2407.2847845631!2d8.627366!3d53.050277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b127f1c8f8f8f1%3A0x1234567890abcdef!2sFriedrich-Ebert-Allee%2C%2027749%20Delmenhorst!5e0!3m2!1sde!2sde!4v1234567890123"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        style="display:none;">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+    <script src="/scripts/kontakt.js"></script>
+    <script src="/scripts/cookies.js"></script>
+    <script src="/includes/includes.js"></script>
+</body>
+
+</html>
