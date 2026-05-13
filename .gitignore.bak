@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Claude Code lokale Settings
+.claude/settings.local.json
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+Thumbs.db
+desktop.ini
+
+# PHP Sensitives
+php/.member_hash
+ressources/galerie/
