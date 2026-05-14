@@ -13,6 +13,45 @@
     <link rel="stylesheet" href="/styles/cookies.css">
     <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/annoucement.css">
+
+    <!-- Strukturierte Daten: Sportverein (Schema.org / JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsClub",
+      "name": "Delmenhorster Federball-Club e.V.",
+      "alternateName": "DFC",
+      "description": "Badmintonverein in Delmenhorst seit 1955. Über 120 Mitglieder, 5 Mannschaften, Jugendtraining und kostenloses Probetraining für Einsteiger.",
+      "url": "https://dfc-online.de/",
+      "logo": "https://dfc-online.de/ressources/logos/dfc-logo.webp",
+      "foundingDate": "1955",
+      "sport": "Badminton",
+      "telephone": "+49 179 5972934",
+      "email": "vorsitzender@dfc-online.de",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jütlandstr. 46D",
+        "postalCode": "27755",
+        "addressLocality": "Delmenhorst",
+        "addressCountry": "DE"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "Sporthalle Willmsgymnasium",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Friedrich-Ebert-Allee",
+          "postalCode": "27749",
+          "addressLocality": "Delmenhorst",
+          "addressCountry": "DE"
+        }
+      },
+      "sameAs": [
+        "https://www.instagram.com/delmenhorsterfc",
+        "https://www.youtube.com/@DelmenhorsterFC"
+      ]
+    }
+    </script>
 </head>
 
 
@@ -46,8 +85,8 @@
                         <span class="stat-label">Mitglieder</span>
                     </div>
                     <div class="stat-box stat-box--sponsor">
-                        <img src="/ressources/logos/VICTOR-Logo_monochrome_black.png" alt="VICTOR"
-                            class="hero-sponsor-logo">
+                        <img src="/ressources/logos/VICTOR-Logo_monochrome_black.webp" alt="VICTOR"
+                            class="hero-sponsor-logo" width="280" height="40" loading="lazy">
                         <span class="stat-label">Ausrüster</span>
                     </div>
                 </div>
@@ -135,8 +174,8 @@
 
                     <!-- Instagram Box -->
                     <div class="social-box">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-                            alt="Instagram" class="social-logo">
+                        <img src="/ressources/logos/instagram.webp"
+                            alt="Instagram" class="social-logo" width="256" height="256" loading="lazy">
                         <h3>Instagram</h3>
                         <a href="https://www.instagram.com/delmenhorsterfc" target="_blank"
                             class="social-btn instagram">
@@ -146,8 +185,8 @@
 
                     <!-- YouTube Box -->
                     <div class="social-box">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
-                            alt="YouTube" class="social-logo youtube">
+                        <img src="/ressources/logos/youtube.svg"
+                            alt="YouTube" class="social-logo youtube" width="96" height="67" loading="lazy">
                         <h3>YouTube</h3>
                         <a href="https://www.youtube.com/@DelmenhorsterFC/streams" target="_blank"
                             class="social-btn youtube">
@@ -166,13 +205,13 @@
             </div>
             <div class="sponsoren-grid">
                 <a href="https://www.victor-europe.com/de" target="_blank" class="sponsor-item sponsor-item--large">
-                    <img src="/ressources/logos/VICTOR-Logo_monochrome_black.png" alt="VICTOR">
+                    <img src="/ressources/logos/VICTOR-Logo_monochrome_black.webp" alt="VICTOR" width="280" height="40" loading="lazy">
                 </a>
                 <a href="https://dolnik.gmbh/" target="_blank" class="sponsor-item sponsor-item--dolnik">
-                    <img src="/ressources/logos/dolnik.png" alt="Dolnik">
+                    <img src="/ressources/logos/dolnik.webp" alt="Dolnik" width="900" height="900" loading="lazy">
                 </a>
                 <a href="https://www.nbv-online.de/" target="_blank" class="sponsor-item sponsor-item--nbv">
-                    <img src="/ressources/logos/nbv_logo.png" alt="Dolnik">
+                    <img src="/ressources/logos/nbv_logo.webp" alt="Niedersächsischer Badminton-Verband" width="466" height="102" loading="lazy">
                 </a>
             </div>
         </div>

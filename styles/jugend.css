@@ -12,7 +12,7 @@
     padding: 15rem 2rem 3rem;
     background:
         linear-gradient(to top, rgba(43, 75, 140, 1) 5%, transparent 70%),
-        url('/ressources/Jugend_2025.jpg');
+        url('/ressources/Jugend_2025.webp');
     background-size: cover;
     background-position: center 25%;
     color: var(--white);

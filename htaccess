@@ -32,6 +32,22 @@
     ExpiresByType image/webp "access plus 1 month"
 </IfModule>
 
+# Sicherheit: HTTP Security-Header
+<IfModule mod_headers.c>
+    # Verhindert MIME-Type-Sniffing
+    Header set X-Content-Type-Options "nosniff"
+    # Schutz vor Clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    # Referrer nur an gleiche Herkunft / bei Downgrade nichts
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    # Schraenkt Browser-Features ein
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    # HSTS: erzwingt HTTPS (1 Jahr). Nur aktivieren wenn Seite dauerhaft per HTTPS laeuft.
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # Content-Security-Policy: erlaubt YouTube-Embeds + Inline-Styles/Scripts der Seite
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; connect-src 'self'; base-uri 'self'; form-action 'self'"
+</IfModule>
+
 # Sicherheit: Verhindere Directory Listing
 Options -Indexes
 

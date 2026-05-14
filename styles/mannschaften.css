@@ -122,7 +122,7 @@
 
 /* 1. Mannschaft – sitzt innerhalb .team-card-wrapper */
 .team-card-wrapper .team-card .team-header {
-    background-image: url('/ressources/teams/1.Mannschaft.png');
+    background-image: url('/ressources/teams/1.Mannschaft.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -142,7 +142,7 @@
 
 /* 2. Mannschaft – zweites Kind des Grids (direkte .team-card) */
 .teams-grid>.team-card:nth-child(2) .team-header {
-    background-image: url('/ressources/teams/2.Mannschaft.png');
+    background-image: url('/ressources/teams/2.Mannschaft.webp');
     background-position: center 20%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -162,7 +162,7 @@
 
 /* 3. Mannschaft */
 .teams-grid>.team-card:nth-child(3) .team-header {
-    background-image: url('/ressources/teams/3.Mannschaft.png');
+    background-image: url('/ressources/teams/3.Mannschaft.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
