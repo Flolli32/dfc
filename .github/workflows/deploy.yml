@@ -12,42 +12,38 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Lokale Datei heisst "htaccess" (ohne Punkt, damit im Editor sichtbar).
-      # Auf dem Server muss sie ".htaccess" heissen.
-      - name: htaccess umbenennen
-        run: cp htaccess .htaccess
-
-      # GitHub-Runner haben keine IPv6-Route. IONOS-Host loest auf IPv6 auf
-      # -> IPv4 ermitteln und in /etc/hosts pinnen. Hostname bleibt damit
-      # erhalten (FTPS-Zertifikat passt), Verbindung laeuft aber ueber IPv4.
-      - name: FTP-Host auf IPv4 pinnen
+      # Deploy-Ordner bauen: nur das, was auf den Server soll.
+      # Doku, Git-Metadaten, Backups und Editor-Kram bleiben draussen.
+      # "htaccess" wird zu ".htaccess" (auf dem Server mit Punkt noetig).
+      - name: Deploy-Ordner vorbereiten
         run: |
-          IPV4=$(getent ahostsv4 "${{ secrets.FTP_HOST }}" | awk '{print $1; exit}')
-          if [ -z "$IPV4" ]; then echo "Keine IPv4 fuer ${{ secrets.FTP_HOST }} gefunden"; exit 1; fi
-          echo "$IPV4 ${{ secrets.FTP_HOST }}" | sudo tee -a /etc/hosts
-          echo "Gepinnt: $IPV4 -> ${{ secrets.FTP_HOST }}"
+          rsync -a --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='deploy' \
+            --exclude='*.md' \
+            --exclude='*.bak' \
+            --exclude='.gitignore' \
+            --exclude='.DS_Store' \
+            --exclude='Thumbs.db' \
+            --exclude='desktop.ini' \
+            --exclude='ressources/players/_originale' \
+            --exclude='ressources/galerie/private' \
+            ./ ./deploy/
+          cp htaccess ./deploy/.htaccess
+          rm -f ./deploy/htaccess
+          echo "--- Inhalt deploy/ ---"
+          ls -la ./deploy/
 
-      - name: FTPS-Deploy zu IONOS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: SFTP-Deploy zu IONOS
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          protocol: ftps
-          # Server-Wurzel. Bei IONOS oft "/" - falls Unterordner, hier anpassen.
-          server-dir: ./
-          # Dateien, die NICHT hochgeladen werden sollen
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            **/*.md
-            **/*.bak
-            **/.DS_Store
-            **/Thumbs.db
-            **/desktop.ini
-            htaccess
-            .gitignore
-            .gitignore.bak
-            ressources/players/_originale/**
-            ressources/galerie/private/**
+          port: 22
+          local_path: './deploy/*'
+          # Server-Wurzel. Bei IONOS-Webhosting meist "/" oder der
+          # Pfad den FileZilla beim Verbinden anzeigt. Ggf. anpassen.
+          remote_path: '/'
+          sftp_only: true
