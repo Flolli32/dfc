@@ -1,0 +1,43 @@
+name: Deploy zu IONOS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Lokale Datei heisst "htaccess" (ohne Punkt, damit im Editor sichtbar).
+      # Auf dem Server muss sie ".htaccess" heissen.
+      - name: htaccess umbenennen
+        run: cp htaccess .htaccess
+
+      - name: FTPS-Deploy zu IONOS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          protocol: ftps
+          # Server-Wurzel. Bei IONOS oft "/" - falls Unterordner, hier anpassen.
+          server-dir: ./
+          # Dateien, die NICHT hochgeladen werden sollen
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/*.md
+            **/*.bak
+            **/.DS_Store
+            **/Thumbs.db
+            **/desktop.ini
+            htaccess
+            .gitignore
+            .gitignore.bak
+            ressources/players/_originale/**
+            ressources/galerie/private/**
