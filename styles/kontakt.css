@@ -184,6 +184,34 @@ section {
     color: var(--primary-blue);
 }
 
+/* Statusmeldung Kontaktformular */
+.form-status {
+    margin-top: 1rem;
+    padding: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.form-status:not(:empty) {
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+}
+
+.form-status-info {
+    background: var(--ice-blue);
+    color: var(--primary-blue);
+}
+
+.form-status-success {
+    background: #e3f5e8;
+    color: #1e7c3a;
+}
+
+.form-status-error {
+    background: #fde8e8;
+    color: #c0392b;
+}
+
 .form-submit {
     width: 100%;
     padding: 1.2rem;
