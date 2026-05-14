@@ -55,8 +55,9 @@ magick input.png -resize 800x -quality 82 -strip -background white -flatten outp
 3. GitHub Actions läuft an, Status im Actions-Tab des Repos prüfen.
 4. Nach ~1–2 Minuten Live-Seite im Inkognito-Modus prüfen (Cache umgehen).
 
-### Bei FTPS-Fehlern
-- IONOS-Zugangsdaten in GitHub Secrets prüfen (`FTP_HOST`, `FTP_USER`, `FTP_PASS`).
+### Bei SFTP-Fehlern
+- IONOS-Zugangsdaten in GitHub Secrets prüfen (`FTP_HOST`, `FTP_USER`, `FTP_PASS`) – gelten auch für SFTP.
+- SFTP läuft über Port 22. IONOS-Webhosting unterstützt kein klassisches FTP/FTPS.
 - Logs der Action lesen – meistens auth- oder Pfad-Fehler.
 
 ## Content-Updates (häufige Aufgaben)
@@ -79,6 +80,6 @@ magick input.png -resize 800x -quality 82 -strip -background white -flatten outp
 ## Häufige Stolpersteine
 
 - **Cache nach Deploy:** Browser cached aggressiv. Im Inkognito testen oder `Ctrl+F5`.
-- **FTPS-Pfade:** Pfad-Wurzel auf IONOS prüfen (oft `/` oder ein Unterordner).
+- **SFTP-Pfade:** `remote_path` in `deploy.yml` muss zur IONOS-Wurzel passen (oft `/` oder ein Unterordner) – der Pfad, den FileZilla nach dem Verbinden anzeigt.
 - **Bildgrößen:** Nicht riesige Originale hochladen – immer durch ImageMagick.
 - **Mobile-Test:** Echtes Smartphone schlägt DevTools-Simulation.

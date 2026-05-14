@@ -2,7 +2,7 @@
 
 ## Übersicht
 
-Statische Website ohne Framework. HTML, CSS, vanilla JavaScript. Deployment vollautomatisch via GitHub Actions zu IONOS-Webspace per FTPS.
+Statische Website ohne Framework. HTML, CSS, vanilla JavaScript. Deployment vollautomatisch via GitHub Actions zu IONOS-Webspace per SFTP.
 
 ## Frontend
 
@@ -44,15 +44,15 @@ Statische Website ohne Framework. HTML, CSS, vanilla JavaScript. Deployment voll
 
 1. Lokale Entwicklung in JetBrains Rider oder VS Code.
 2. Commit + Push zu **GitHub** (Repo: DFC-Website).
-3. **GitHub Actions Workflow** triggert auf Push zu `main`:
-   - Optional: Build-/Lint-Schritte.
-   - **FTPS-Deploy** zu IONOS-Webspace.
+3. **GitHub Actions Workflow** (`.github/workflows/deploy.yml`) triggert auf Push zu `main`:
+   - Deploy-Ordner per rsync bauen (Doku/Backups/Git-Metadaten raus, `htaccess` → `.htaccess`).
+   - **SFTP-Deploy** zu IONOS-Webspace (`wlixcc/SFTP-Deploy-Action`).
 4. Live-Domain wird sofort aktualisiert.
 
 ## Domains & Hosting
 
 - **Domain:** registriert bei **Strato**.
-- **Webspace:** **IONOS** (Standard-Webhosting, FTPS-Zugang).
+- **Webspace:** **IONOS** (Standard-Webhosting, SFTP-Zugang, Port 22).
 - DNS-Records bei Strato verwaltet.
 
 ## Tools im Workflow
