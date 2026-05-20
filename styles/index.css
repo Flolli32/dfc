@@ -984,3 +984,53 @@
         height: 80px;
     }
 }
+/* Hero Eyebrow Badge */
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #fff;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+    animation: slideUp 0.8s ease-out;
+}
+
+a.hero-eyebrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.hero-eyebrow .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sky-blue);
+    box-shadow: 0 0 0 3px rgba(122, 168, 232, 0.3);
+    animation: badge-pulse 1.8s infinite;
+}
+
+@keyframes badge-pulse {
+    50% { opacity: 0.4; }
+}
+
+@media (max-width: 480px) {
+    .hero-eyebrow {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.8rem;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+    }
+}
