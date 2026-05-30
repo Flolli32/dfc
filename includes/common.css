@@ -111,6 +111,17 @@ body {
     background: var(--white);
 }
 
+/* ===== TEXT-MARKIERUNG ===== */
+::selection {
+    background: var(--ice-blue);
+    color: var(--primary-blue);
+}
+
+::-moz-selection {
+    background: var(--ice-blue);
+    color: var(--primary-blue);
+}
+
 /* ===== TYPOGRAPHY ===== */
 h1,
 h2,
