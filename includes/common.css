@@ -76,6 +76,19 @@ Basierend auf Original index.css
     box-sizing: border-box;
 }
 
+/* ===== REDUCED MOTION =====
+   Animationen/Transitions für entsprechend eingestellte Nutzer abschalten */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 /* ===== BODY ===== */
 body {
     font-family: 'Work Sans', sans-serif;
