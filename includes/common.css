@@ -603,3 +603,56 @@ footer {
     gap: 1rem;
     align-items: center;
 }
+
+/* ===== NACH-OBEN-BUTTON ===== */
+.back-to-top {
+    position: fixed;
+    right: var(--space-md);
+    bottom: var(--space-md);
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    color: var(--white);
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(43, 75, 140, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity .3s ease, transform .3s ease, visibility .3s ease, background .2s ease;
+    z-index: 900;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--deep-blue);
+    transform: translateY(-3px);
+}
+
+.back-to-top:focus-visible {
+    outline: 3px solid var(--sky-blue);
+    outline-offset: 2px;
+}
+
+.back-to-top svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        right: var(--space-sm);
+        bottom: var(--space-sm);
+        width: 44px;
+        height: 44px;
+    }
+}

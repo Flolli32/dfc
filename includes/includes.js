@@ -59,4 +59,30 @@ document.addEventListener('DOMContentLoaded', function () {
             if (footerEl) footerEl.innerHTML = data;
         })
         .catch(error => console.error('Fehler beim Laden des Footers:', error));
+
+    // ── "Nach oben"-Button ────────────────────────────────────────
+    (function () {
+        const btn = document.createElement('button');
+        btn.className = 'back-to-top';
+        btn.type = 'button';
+        btn.setAttribute('aria-label', 'Nach oben');
+        btn.innerHTML =
+            '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+            '<path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" ' +
+            'stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        document.body.appendChild(btn);
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function onScroll() {
+            btn.classList.toggle('is-visible', window.pageYOffset > 300);
+        }
+
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+        });
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    })();
 });
