@@ -53,6 +53,11 @@
     object-fit: cover;
     max-height: 500px;
     object-position: center -100px;
+    transition: transform .4s ease;
+}
+
+.hero-image-container:hover .hero-image {
+    transform: scale(1.05);
 }
 
 section {
@@ -234,6 +239,11 @@ section {
     object-position: top center;
     display: block;
     image-rendering: -webkit-optimize-contrast;
+    transition: transform .4s ease;
+}
+
+.trainer-card:hover .trainer-img {
+    transform: scale(1.05);
 }
 
 .trainer-img-fallback {

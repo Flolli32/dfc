@@ -55,6 +55,11 @@
     object-fit: cover;
     max-height: 500px;
     object-position: center 0px;
+    transition: transform .4s ease;
+}
+
+.hero-image-container:hover .hero-image {
+    transform: scale(1.05);
 }
 
 .welcome-section {
@@ -199,6 +204,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.vorstand-card:hover .vorstand-avatar img {
+    transform: scale(1.08);
 }
 
 .vorstand-card h3 {
