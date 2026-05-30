@@ -329,6 +329,10 @@ section {
 
 @media (max-width: 768px) {
 
+    .page-header {
+        margin-top: 60px;
+    }
+
     .page-header p {
         font-size: 1rem;
     }
@@ -350,6 +354,10 @@ section {
 }
 
 @media (max-width: 480px) {
+
+    .page-header {
+        margin-top: 60px;
+    }
 
     .page-header p {
         font-size: 0.9rem;

@@ -39,7 +39,7 @@ section.datenschutz-section {
 }
 
 .toc-card h2 {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
     color: var(--primary-blue);
     margin-bottom: 1rem;
 }
@@ -78,7 +78,7 @@ section.datenschutz-section {
 }
 
 .datenschutz-card h2 {
-    font-size: 2rem;
+    font-size: 2.8rem;
     color: var(--primary-blue);
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
@@ -153,8 +153,10 @@ section.datenschutz-section {
 }
 
 @media (max-width: 768px) {
+    .page-header { margin-top: 60px; }
     .page-header h1 { font-size: 2.4rem; }
     .datenschutz-card { padding: 2rem 1.5rem; }
+    .datenschutz-card h2, .toc-card h2 { font-size: 2.2rem; }
     .toc-list { columns: 1; }
 }
 
@@ -162,7 +164,7 @@ section.datenschutz-section {
     .page-header h1 { font-size: 2rem; }
     .page-header p { font-size: 0.9rem; }
     .datenschutz-card { padding: 1.5rem 1rem; }
-    .datenschutz-card h2 { font-size: 1.4rem; }
+    .datenschutz-card h2, .toc-card h2 { font-size: 1.8rem; }
     .datenschutz-card h3 { font-size: 1.1rem; }
     .datenschutz-card p, .datenschutz-card li { font-size: 0.9rem; }
 }

@@ -49,7 +49,7 @@
 }
 
 .hero-content h1 {
-    font-size: 7rem;
+    font-size: clamp(2.6rem, 8vw, 7rem);
     color: var(--white);
     line-height: 0.9;
     margin-bottom: 2rem;
@@ -61,7 +61,7 @@
 .hero-highlight {
     color: var(--white);
     display: block;
-    font-size: 7.5rem;
+    font-size: clamp(2.8rem, 8.5vw, 7.5rem);
     text-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
     line-height: 1;
     letter-spacing: 2px;
@@ -69,7 +69,7 @@
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2.5rem;
     font-weight: 300;
@@ -636,14 +636,6 @@
         padding: 3rem 2rem;
     }
 
-    .hero-content h1 {
-        font-size: 4.5rem;
-    }
-
-    .hero-highlight {
-        font-size: 5rem;
-    }
-
     .training-card {
         max-width: 560px;
         margin: 0 auto;
@@ -680,17 +672,11 @@
         gap: 2rem;
     }
 
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-
     .hero-highlight {
-        font-size: 3.2rem;
         letter-spacing: 0.5px;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
         margin-bottom: 1.5rem;
     }
 
@@ -710,12 +696,12 @@
         margin: 0;
     }
 
-    /* Stats in einer Reihe */
+    /* 3 Zahlen-Stats in einer Reihe, Sponsor in eigener Zeile darunter */
     .hero-stats {
-        flex-wrap: nowrap;
-        gap: 1.2rem;
+        flex-wrap: wrap;
+        gap: 1rem 1.8rem;
         margin-top: 2rem;
-        align-items: flex-end;
+        align-items: center;
     }
 
     .stat-number {
@@ -727,17 +713,24 @@
     }
 
     .stat-box--sponsor {
-        border-left: 1px solid rgba(255, 255, 255, 0.2);
-        padding-left: 1.2rem;
-        flex-shrink: 0;
+        flex-basis: 100%;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.85rem 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .stat-box--sponsor .stat-label {
+        margin-top: 0;
     }
 
     .hero-sponsor-logo {
-        /* width: 90px;
-        height: 40px; */
         width: 180px;
         height: 40px;
-        object-position: left center;
+        object-position: center;
         margin: 0 auto;
     }
 
@@ -788,17 +781,11 @@
         padding: 4rem 1rem;
     }
 
-    .hero-content h1 {
-        font-size: 2.4rem;
-    }
-
     .hero-highlight {
-        font-size: 3.5rem;
         letter-spacing: 0;
     }
 
     .hero-subtitle {
-        font-size: 0.95rem;
         margin-bottom: 1.25rem;
     }
 
