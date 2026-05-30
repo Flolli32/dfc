@@ -25,6 +25,22 @@
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--deep-blue) 100%);
 }
 
+/* Weicher Wellen-Übergang Hero → Welcome */
+.hero-wave {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 50px;
+    display: block;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-wave path {
+    fill: var(--off-white);
+}
+
 .hero::before {
     content: '';
     position: absolute;
