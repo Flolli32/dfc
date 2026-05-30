@@ -44,6 +44,28 @@
     counters.forEach(el => observer.observe(el));
 })();
 
+// "Heute"-Hervorhebung bei Trainingszeiten
+(function () {
+    const entries = document.querySelectorAll('.time-entry[data-days]');
+    if (!entries.length) return;
+
+    const today = new Date().getDay(); // So=0 … Sa=6
+
+    entries.forEach(entry => {
+        const days = entry.dataset.days.split(',').map(d => parseInt(d, 10));
+        if (!days.includes(today)) return;
+
+        entry.classList.add('time-entry--today');
+        const title = entry.querySelector('.time-title');
+        if (title && !title.querySelector('.time-badge')) {
+            const badge = document.createElement('span');
+            badge.className = 'time-badge';
+            badge.textContent = 'Heute';
+            title.appendChild(badge);
+        }
+    });
+})();
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
