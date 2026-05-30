@@ -67,6 +67,12 @@ Basierend auf Original index.css
     --text-gray: #536471;
     --border-light: #E1E8ED;
     --accent-green: #1e9e57;
+
+    /* Radius-Tokens (vereinheitlicht) */
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-pill: 99px;
 }
 
 /* ===== RESET ===== */
@@ -263,7 +269,7 @@ nav {
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(10px);
         border: 1px solid var(--border-light);
-        border-radius: 16px;
+        border-radius: var(--radius-md);
         padding: 1.5rem;
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 

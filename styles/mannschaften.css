@@ -246,7 +246,7 @@
     background: var(--light-blue);
     color: var(--white);
     border: none;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -286,7 +286,7 @@
     gap: 1rem;
     padding: 1rem;
     background: var(--off-white);
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     margin-bottom: 0.8rem;
     transition: transform 0.2s ease;
 }

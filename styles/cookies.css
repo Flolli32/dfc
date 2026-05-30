@@ -235,7 +235,7 @@
 /* Responsive */
 @media (max-width: 560px) {
     .cb-box {
-        border-radius: 16px;
+        border-radius: var(--radius-md);
         max-height: 90vh;
         overflow-y: auto;
     }

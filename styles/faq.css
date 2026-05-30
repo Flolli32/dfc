@@ -169,7 +169,7 @@ section {
 .benefit-card {
     background: var(--white);
     padding: 2.5rem;
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     text-align: center;
     box-shadow: 0 4px 15px rgba(43, 75, 140, 0.08);
     border: 1px solid var(--border-light);

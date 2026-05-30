@@ -174,7 +174,7 @@
 
     .ab-box {
 
-        border-radius: 16px;
+        border-radius: var(--radius-md);
         max-height: 90vh;
         overflow-y: auto;
 
