@@ -22,14 +22,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
             function openMenu() {
                 navMenu.classList.add('active');
-                mobileMenuBtn.textContent = '✕';
+                mobileMenuBtn.classList.add('open');
                 mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                mobileMenuBtn.setAttribute('aria-label', 'Menü schließen');
             }
 
             function closeMenu() {
                 navMenu.classList.remove('active');
-                mobileMenuBtn.textContent = '☰';
+                mobileMenuBtn.classList.remove('open');
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.setAttribute('aria-label', 'Menü öffnen');
             }
 
             mobileMenuBtn.addEventListener('click', function (e) {
