@@ -18,7 +18,7 @@
 /* Page Header - Original beibehalten */
 .page-header {
     margin-top: 100px;
-    padding: 5rem 2rem 3rem;
+    padding: 3rem 2rem 2rem;
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--deep-blue) 100%);
     color: var(--white);
     text-align: center;

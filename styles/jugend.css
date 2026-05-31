@@ -9,12 +9,8 @@
 
 .page-header {
     margin-top: 100px;
-    padding: 15rem 2rem 3rem;
-    background:
-        linear-gradient(to top, rgba(43, 75, 140, 1) 5%, transparent 70%),
-        url('/ressources/Jugend_2025.webp');
-    background-size: cover;
-    background-position: center 25%;
+    padding: 3rem 2rem 2rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--deep-blue) 100%);
     color: var(--white);
     text-align: center;
     position: relative;
@@ -52,7 +48,7 @@
     display: block;
     object-fit: cover;
     max-height: 500px;
-    object-position: center -100px;
+    object-position: center 20%;
     transition: transform .4s ease;
 }
 
@@ -244,6 +240,11 @@ section {
 
 .trainer-card:hover .trainer-img {
     transform: scale(1.05);
+}
+
+/* Per-Foto Bildausschnitt feinjustieren */
+.trainer-img--klaus {
+    object-position: center 40%;
 }
 
 .trainer-img-fallback {

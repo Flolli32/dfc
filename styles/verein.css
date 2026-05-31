@@ -14,12 +14,8 @@
 
 .page-header {
     margin-top: 100px;
-    padding: 15rem 2rem 3rem;
-    background:
-        linear-gradient(to top, rgba(43, 75, 140, 1) 5%, transparent 70%),
-        url('/ressources/DFC_all.jpeg');
-    background-size: cover;
-    background-position: center 15%;
+    padding: 3rem 2rem 2rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--deep-blue) 100%);
     color: var(--white);
     text-align: center;
 }
@@ -67,7 +63,6 @@
     z-index: 2;
     padding: 6rem 2rem;
     background: var(--off-white);
-    border-radius: 30px 30px 0 0;
     box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.12);
 }
 
@@ -536,7 +531,6 @@
 
 @media (max-width: 768px) {
     .page-header {
-        padding: 10rem 1.5rem 2rem;
         margin-top: 60px;
     }
 
@@ -551,7 +545,6 @@
     }
 
     .welcome-section {
-        border-radius: 20px 20px 0 0;
         padding: 3.5rem 1.5rem 5rem;
     }
 
